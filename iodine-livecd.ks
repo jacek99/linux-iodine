@@ -10,16 +10,26 @@
 %include /usr/share/rpmfusion-free-remix-kickstarts/rpmfusion-free-live-base.ks
 %include /usr/share/rpmfusion-nonfree-remix-kickstarts/rpmfusion-nonfree-live-base.ks
 
+# repos
+repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/x86_64/
+
 %packages
+
+#repos
+adobe-release
+
 # office
 libreoffice
 #geany
-#evolution
-#evolution-ews
-
+evolution
+evolution-ews
 
 # internet
 firefox
+mozilla-adblockplus
+mozilla-firetray-firefox
+flash-plugin
+NetworkManager-openconnect
 
 # keyboard
 synapse
@@ -30,6 +40,15 @@ audacious-plugins*
 #audacity
 gimp
 openshot
+vlc
+vlc-extras
+
+gstreamer-plugins-bad
+gstreamer-plugins-bad-free
+gstreamer-plugins-bad-free-extras
+#gstreamer-plugins-bad-nonfree
+gstreamer-plugins-good-extras
+gstreamer-plugins-ugly
 
 # visual goodies
 *-gtk2-theme
@@ -47,14 +66,17 @@ gnome-backgrounds
 
 # system
 #TODO: fedorautils
-#vim
+vim
 #ruby
 #golang
 #java-1.7.0-openjdk
+curl
+wget
 PackageKit
 yum-plugin-fastestmirror
 yum-plugin-remove-with-leaves
 yum-plugin-upgrade-helper
+grsync
 
 # XFCE
 thunar-*-plugin
@@ -69,9 +91,22 @@ greybird-xfce4-notifyd-theme
 -claws-mail*
 -midori
 -yumex
+-parole
 #-mousepad
 #leafpad
+-thunar-vcs-plugin
 
+%end
+
+%post --nochroot
+#!/bin/bash
+
+echo "[IODINE] Copying extra files into ISO..."
+cp -rf filesystem/ $INSTALL_ROOT/
+
+echo "[IODINE] Copying additional RPMs into ISO..."
+mkdir -p $INSTALL_ROOT/opt/rpm
+cp rpm/*.rpm $INSTALL_ROOT/opt/rpm
 
 %end
 
@@ -79,13 +114,31 @@ greybird-xfce4-notifyd-theme
 %post --erroronfail
 #!/bin/bash
 
+# RPMs
+echo "[IODINE] Installing additional RPMs and packages..."
+yum localinstall /opt/*.rpm -y
+yum install fedorautils
+
+# BACKGROUNDS
+echo "[INFO] Creating symlinks to GNOME backgrounds..."
+
 mkdir -p /usr/share/xfce4/backdrops
 
-echo "Creating symlinks to GNOME backgrounds"
 for file in /usr/share/backgrounds/gnome/*
 do
 	ln -s $file  /usr/share/xfce4/backdrops/$(basename $file)
 done
+
+echo "[IODINE] Setting up Live User's desktop..."
+
+cat > /home/liveuser/.config/xfce4/helpers.rc << FOE
+MailReader=
+FileManager=Thunar
+WebBrowser=firefox
+FOE
+
+cp -f /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml /home/liveuser/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+
 
 %end
 
