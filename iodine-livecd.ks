@@ -13,8 +13,8 @@
 %include iodine-repos.ks
 
 # repos
-repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/x86_64/
-repo --name=fedorautils --baseurl=http://download.opensuse.org/repositories/home:/satya164:/fedorautils/Fedora_$releasever/
+#repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/x86_64/
+#repo --name=fedorautils --baseurl=http://download.opensuse.org/repositories/home:/satya164:/fedorautils/Fedora_$releasever/
 
 %packages
 
@@ -22,9 +22,9 @@ repo --name=fedorautils --baseurl=http://download.opensuse.org/repositories/home
 -fedora-release
 -fedora-logos
 -fedora-release-notes
-generic-release
-generic-logos
-generic-release-notes
+#generic-release
+#generic-logos
+#generic-release-notes
 
 #repos
 adobe-release

@@ -22,6 +22,9 @@ repo --name=rpmfusion-free-released --mirrorlist=http://mirrors.rpmfusion.org/mi
 # To include updates, use the following "repo"
 repo --name=rpmfusion-free-updates --mirrorlist=http://mirrors.rpmfusion.org/mirrorlist?repo=free-fedora-updates-released-19&arch=$basearch
 
+repo --name=adobe --baseurl=http://linuxdownload.adobe.com/linux/x86_64/
+repo --name=fedorautils --baseurl=http://download.opensuse.org/repositories/home:/satya164:/fedorautils/Fedora_$releasever/
+
 #%packages
 # unbrand; should be done by rpmfusion-free-live-base.ks, but we do it here as
 # well just to be sure
