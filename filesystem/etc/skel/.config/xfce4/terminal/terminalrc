@@ -19,6 +19,6 @@ MiscHighlightUrls=TRUE
 DropdownWidth=97
 DropdownHeight=100
 DropdownOpacity=93
-ColorForeground=#000000
-ColorBackground=#fffffe9dcc4e
+ColorForeground=#17f018
+DropdownPosition=100
 

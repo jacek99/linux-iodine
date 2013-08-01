@@ -67,6 +67,8 @@ gstreamer-plugins-ugly
 *-gtk3-theme
 rss-glx-xscreensaver
 gnome-backgrounds
+freetype-infinality
+fontconfig-infinality
 
 # maybe Compiz? will think about it
 #compiz-xfce
