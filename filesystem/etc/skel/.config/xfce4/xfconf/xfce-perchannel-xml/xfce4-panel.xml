@@ -22,15 +22,13 @@
         <value type="int" value="12"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
-        <value type="int" value="13"/>
-        <value type="int" value="14"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
         <value type="int" value="6"/>
         <value type="int" value="2"/>
       </property>
       <property name="mode" type="uint" value="2"/>
-      <property name="background-alpha" type="uint" value="49"/>
+      <property name="background-alpha" type="uint" value="81"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -92,8 +90,6 @@
     <property name="plugin-12" type="string" value="separator">
       <property name="style" type="uint" value="1"/>
     </property>
-    <property name="plugin-13" type="string" value="cpugraph"/>
-    <property name="plugin-14" type="string" value="systemload"/>
     <property name="plugin-17" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="13751174524.desktop"/>

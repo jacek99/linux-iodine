@@ -7,5 +7,6 @@
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-window-width" type="int" value="639"/>
   <property name="last-window-height" type="int" value="480"/>
-  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-window-maximized" type="bool" value="true"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
 </channel>
