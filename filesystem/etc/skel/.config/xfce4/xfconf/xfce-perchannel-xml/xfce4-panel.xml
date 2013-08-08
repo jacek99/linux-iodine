@@ -56,6 +56,7 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="thunar"/>
         <value type="string" value="vlc"/>
         <value type="string" value="evolution reminders"/>
         <value type="string" value="networkmanager applet"/>

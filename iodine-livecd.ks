@@ -35,6 +35,7 @@ thunderbird
 mozilla-firetray-thunderbird
 thunderbird-enigmail
 thunderbird-lightning
+evince
 
 # internet
 firefox
@@ -42,14 +43,15 @@ mozilla-adblockplus
 mozilla-firetray-firefox
 flash-plugin
 NetworkManager-openconnect
+ppp
 
 # keyboard
 synapse
 
 #media
 audacious
-audacious-plugins*
-audacity
+audacious-plugins
+audacious-plugins-freeworld*
 gimp
 openshot
 vlc

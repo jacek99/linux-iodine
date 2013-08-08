@@ -13,3 +13,4 @@ cp -r ~/.config/autostart/synapse.desktop filesystem/etc/skel/.config/autostart
 cp -r ~/.config/synapse/* filesystem/etc/skel/.config/synapse
 cp -r ~/.config/hotkeys/synapse.hotkeys filesystem/etc/skel/.config/hotkeys/synapse.hotkeys
 
+cp ~/.xscreensaver filesystem/etc/skel/.xscreensaver
